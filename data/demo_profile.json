@@ -1,1 +1,58 @@
-{}
+{
+  "schema_version": 1,
+  "is_synthetic": true,
+  "name": "Pirkanmaa Community Heart Association",
+  "entity_type": "registered_association",
+  "country": "FI",
+  "region": "Pirkanmaa",
+  "mission": "Community cardiovascular-health education and peer support.",
+  "project_title": "Heart Health Saturdays",
+  "project_activity": "Community workshops",
+  "requested_amount_minor": 400000,
+  "currency": "EUR",
+  "budget_lines": [
+    {"label": "venue", "amount_minor": 120000},
+    {"label": "materials", "amount_minor": 80000},
+    {"label": "travel", "amount_minor": 60000},
+    {"label": "insurance", "amount_minor": 40000},
+    {"label": "evaluation", "amount_minor": 100000}
+  ],
+  "facts": [
+    {
+      "id": "ORG_ENTITY",
+      "text": "Pirkanmaa Community Heart Association is a registered association (registered_association) in Finland.",
+      "approved": true,
+      "provenance": "data/demo_profile.json (synthetic fixture)",
+      "is_synthetic": true
+    },
+    {
+      "id": "ORG_GEOGRAPHY",
+      "text": "The association operates in the Pirkanmaa region of Finland.",
+      "approved": true,
+      "provenance": "data/demo_profile.json (synthetic fixture)",
+      "is_synthetic": true
+    },
+    {
+      "id": "ORG_MISSION",
+      "text": "The association's mission is community cardiovascular-health education and peer support.",
+      "approved": true,
+      "provenance": "data/demo_profile.json (synthetic fixture)",
+      "is_synthetic": true
+    },
+    {
+      "id": "PROJECT_ACTIVITY",
+      "text": "The project Heart Health Saturdays delivers community workshops. This is a planned activity, not a completed result.",
+      "approved": true,
+      "provenance": "data/demo_profile.json (synthetic fixture)",
+      "is_synthetic": true
+    },
+    {
+      "id": "PROJECT_BUDGET",
+      "text": "The requested budget is EUR 4,000.00 covering venue, materials, travel, insurance, and evaluation costs. All budget lines are proposed costs, not historical expenditure.",
+      "approved": true,
+      "provenance": "data/demo_profile.json (synthetic fixture)",
+      "is_synthetic": true
+    }
+  ],
+  "profile_reviewed": true
+}

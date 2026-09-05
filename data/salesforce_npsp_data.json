@@ -1,6 +1,50 @@
 {
   "is_mock": true,
-  "projects": [],
-  "past_grants": [],
-  "impact_metrics": []
+  "projects": [
+    {
+      "id": "NPSP_PROJECT_2025_WORKSHOPS",
+      "name": "Heart Health Workshops 2025",
+      "description": "Four community cardiovascular-health workshops delivered during 2025.",
+      "status": "completed",
+      "period": "2025",
+      "is_synthetic": true
+    },
+    {
+      "id": "NPSP_PROJECT_2026_SATURDAYS",
+      "name": "Heart Health Saturdays 2026",
+      "description": "Active community workshop initiative planned for 2026. Planned activity, not a completed result.",
+      "status": "active",
+      "period": "2026",
+      "is_synthetic": true
+    }
+  ],
+  "past_grants": [
+    {
+      "id": "NPSP_GRANT_2025_001",
+      "funder": "Synthetic Community Foundation",
+      "amount_minor": 200000,
+      "currency": "EUR",
+      "period": "2025",
+      "purpose": "Support for community cardiovascular-health workshops delivered in 2025.",
+      "is_synthetic": true
+    }
+  ],
+  "impact_metrics": [
+    {
+      "id": "NPSP_METRIC_WORKSHOPS_2025",
+      "metric": "workshops_delivered",
+      "value": 4,
+      "period": "2025",
+      "note": "Completed workshops delivered in 2025.",
+      "is_synthetic": true
+    },
+    {
+      "id": "NPSP_METRIC_ATTENDANCE_2025",
+      "metric": "workshop_attendances",
+      "value": 80,
+      "period": "2025",
+      "note": "Total workshop attendances in 2025; not a count of unique people.",
+      "is_synthetic": true
+    }
+  ]
 }

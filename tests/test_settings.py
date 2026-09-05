@@ -408,7 +408,9 @@ def test_importing_implemented_modules_performs_no_outbound_calls():
     # or Snowflake call; a violation would raise OutboundCallBlocked.
     import errors  # noqa: F401
     import models  # noqa: F401
+    import services.demo_service  # noqa: F401
     import services.evidence  # noqa: F401
+    import services.salesforce_service  # noqa: F401
     import settings  # noqa: F401
 
 
@@ -418,10 +420,8 @@ def test_importing_implemented_modules_performs_no_outbound_calls():
         "app",
         "services.assessment",
         "services.db_service",
-        "services.demo_service",
         "services.export",
         "services.gemini_service",
-        "services.salesforce_service",
         "services.scraper_service",
     ],
 )
