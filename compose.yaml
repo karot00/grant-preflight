@@ -1,0 +1,6 @@
+# Grant Preflight public deployment stack: services `app` and `caddy`.
+#
+# Implemented in Phase 6 (P6.2). The public app runs with APP_MODE=public_demo,
+# AI_MODE=recorded, STORAGE_MODE=memory only; no env_file, no secret mounts, no
+# published app port. Caddy (digest-pinned caddy:2.11.4-alpine) publishes
+# 80/443 with automatic HTTPS for grant-preflight.karotammela.fi.

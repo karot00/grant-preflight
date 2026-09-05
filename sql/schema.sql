@@ -1,0 +1,6 @@
+-- Grant Preflight Snowflake schema (GRANT_PREFLIGHT.APP.GRANTS and
+-- GRANT_PREFLIGHT.APP.ASSESSMENTS).
+--
+-- Implemented in Phase 3, Lane C (P3C.2). Executed by the human administrator
+-- with an administrative role; the application never runs DDL at import or
+-- rerun time.

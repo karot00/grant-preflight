@@ -1,0 +1,5 @@
+# Grant Preflight reverse proxy for grant-preflight.karotammela.fi.
+#
+# Implemented in Phase 6 (P6.2) with the exact site block from the runbook:
+# encode zstd gzip; reverse_proxy app:8501. Automatic HTTPS via ACME; no
+# wildcard or extra hostname; admin endpoint not published.

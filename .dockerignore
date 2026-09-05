@@ -1,0 +1,13 @@
+.git/
+.venv/
+.env
+.env.*
+.secrets/
+.streamlit/secrets.toml
+*.pem
+*.p8
+__pycache__/
+*.py[cod]
+.pytest_cache/
+local-recordings/
+.kilo/

@@ -1,0 +1,4 @@
+# Streamlit configuration.
+#
+# Theme (P4.6) and server settings (P6.1: headless, CORS, XSRF protection,
+# usage stats) are filled in during Phases 4 and 6.
