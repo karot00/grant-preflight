@@ -1,15 +1,24 @@
-"""Tests for the P1.2 configuration contract (settings.py) and the P1.3
-error contract (errors.py).
+"""Tests for the P1.2 configuration contract (settings.py), the P1.3 error
+contract (errors.py), and self-tests for the P1.5 outbound-call guard
+installed by conftest.py.
 
 These tests are pure: they build environment mappings in memory and never
-touch the network, the filesystem beyond import, or real credentials. The
-P1.5 outbound-call guard is added to conftest.py in a later Phase 1 unit.
+touch the network, the filesystem beyond import, or real credentials.
 """
 
 import dataclasses
+import importlib
+import os
+import socket
 from pathlib import Path
 
 import pytest
+import requests
+import snowflake.connector
+from conftest import CREDENTIAL_ENV_NAMES as GUARD_CREDENTIAL_ENV_NAMES
+from conftest import MODE_ENV_NAMES
+from conftest import OutboundCallBlocked
+from google import genai
 
 import settings as settings_module
 from errors import ERROR_CODES, AppError
@@ -338,3 +347,86 @@ def test_repr_never_contains_secret_values():
 
 def test_settings_defaults_equal_public_demo_settings():
     assert Settings() == load_settings({})
+
+
+# --- P1.5 outbound-call guard self-tests -----------------------------------
+
+
+def test_guard_blocks_requests_network_access():
+    with pytest.raises(OutboundCallBlocked):
+        requests.get("https://avustukset.hel.fi/", timeout=1)
+    with pytest.raises(OutboundCallBlocked):
+        requests.sessions.Session().get("https://example.test/", timeout=1)
+
+
+def test_guard_blocks_dns_lookups():
+    with pytest.raises(OutboundCallBlocked):
+        socket.getaddrinfo("avustukset.hel.fi", 443)
+    with pytest.raises(OutboundCallBlocked):
+        socket.gethostbyname("avustukset.hel.fi")
+    with pytest.raises(OutboundCallBlocked):
+        socket.gethostbyname_ex("avustukset.hel.fi")
+
+
+def test_guard_blocks_gemini_client_construction():
+    with pytest.raises(OutboundCallBlocked):
+        genai.Client(api_key="sentinel-not-a-real-key")
+
+
+def test_guard_blocks_snowflake_connection_creation():
+    with pytest.raises(OutboundCallBlocked):
+        snowflake.connector.connect(account="sentinel-account")
+    with pytest.raises(OutboundCallBlocked):
+        snowflake.connector.SnowflakeConnection(account="sentinel-account")
+
+
+@pytest.mark.parametrize("name", GUARD_CREDENTIAL_ENV_NAMES + MODE_ENV_NAMES)
+def test_guard_clears_inherited_environment_variables(monkeypatch, name):
+    # The guard's autouse fixture already ran; a value set here by a test's
+    # own monkeypatch is visible, proving the guard does not fight explicit
+    # per-test injection, while the inherited host value was removed first.
+    assert name not in os.environ or os.environ[name] == ""
+    monkeypatch.setenv(name, "sentinel-injected-by-test")
+    assert os.environ[name] == "sentinel-injected-by-test"
+
+
+def test_guard_credential_names_match_settings_contract():
+    assert GUARD_CREDENTIAL_ENV_NAMES == CREDENTIAL_ENV_NAMES
+
+
+def test_default_settings_fixture_is_public_recorded_memory(default_settings):
+    assert default_settings.app_mode == "public_demo"
+    assert default_settings.ai_mode == "recorded"
+    assert default_settings.storage_mode == "memory"
+    assert default_settings.gemini_api_key is None
+    assert default_settings.snowflake_account is None
+
+
+def test_importing_implemented_modules_performs_no_outbound_calls():
+    # Importing the implemented application modules under the active guard
+    # proves the imports themselves trigger no blocked network, DNS, Gemini,
+    # or Snowflake call; a violation would raise OutboundCallBlocked.
+    import errors  # noqa: F401
+    import settings  # noqa: F401
+
+
+@pytest.mark.parametrize(
+    "module_name",
+    [
+        "app",
+        "models",
+        "services.assessment",
+        "services.db_service",
+        "services.demo_service",
+        "services.evidence",
+        "services.export",
+        "services.gemini_service",
+        "services.salesforce_service",
+        "services.scraper_service",
+    ],
+)
+def test_unimplemented_stub_modules_fail_honestly_without_outbound_calls(module_name):
+    # Phase 1 stubs must raise NotImplementedError (never OutboundCallBlocked
+    # and never silent success) until their phase implements them.
+    with pytest.raises(NotImplementedError):
+        importlib.import_module(module_name)
