@@ -1,4 +1,757 @@
 {
   "schema_version": 1,
-  "cases": []
+  "cases": [
+    {
+      "case_id": "eligible",
+      "source_file": "eligible.txt",
+      "expected_decision": "pursue",
+      "authored_extraction": {
+        "foundation": {
+          "value": "Pirkanmaa Community Wellness Foundation",
+          "quote": "Pirkanmaa Community Wellness Foundation"
+        },
+        "title": {
+          "value": "Community Cardiovascular-Health Grant 2026",
+          "quote": "Community Cardiovascular-Health Grant 2026"
+        },
+        "amount": {
+          "value": "EUR 5,000",
+          "quote": "must not exceed EUR 5,000"
+        },
+        "amount_min_minor": null,
+        "amount_max_minor": 500000,
+        "currency": "EUR",
+        "focus_areas": ["cardiovascular health", "community workshops"],
+        "deadline": {
+          "kind": "datetime",
+          "raw_text": "15 October 2026 at 13:00 Europe/Helsinki",
+          "quote": "Applications close on 15 October 2026 at 13:00 Europe/Helsinki.",
+          "at": "2026-10-15T10:00:00Z",
+          "on": null,
+          "timezone": "Europe/Helsinki"
+        },
+        "requirements": [
+          {
+            "dimension": "applicant_type",
+            "description": "Applicant must be a registered association.",
+            "quote": "Registered associations operating in Pirkanmaa, Finland may apply.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["ORG_ENTITY"],
+            "reason": "The quoted clause names registered associations as eligible applicants."
+          },
+          {
+            "dimension": "geography",
+            "description": "The organization must operate in Pirkanmaa, Finland.",
+            "quote": "Registered associations operating in Pirkanmaa, Finland may apply.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["ORG_GEOGRAPHY"],
+            "reason": "The quoted clause requires operations in Pirkanmaa, Finland."
+          },
+          {
+            "dimension": "activity",
+            "description": "The funded activity must be community cardiovascular-health workshops.",
+            "quote": "The grant supports community cardiovascular-health workshops.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["ORG_MISSION", "PROJECT_ACTIVITY"],
+            "reason": "The quoted clause funds community cardiovascular-health workshops."
+          },
+          {
+            "dimension": "funding",
+            "description": "Requests must be in EUR and must not exceed EUR 5,000.",
+            "quote": "Requests must be in EUR and must not exceed EUR 5,000.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["PROJECT_BUDGET"],
+            "reason": "The quoted clause caps requests at EUR 5,000 and requires EUR."
+          },
+          {
+            "dimension": "funding",
+            "description": "Only venue, materials, travel, insurance, and evaluation costs are eligible.",
+            "quote": "Venue, materials, travel, insurance, and evaluation costs are eligible.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["PROJECT_BUDGET"],
+            "reason": "The quoted clause lists the eligible cost categories."
+          },
+          {
+            "dimension": "deadline",
+            "description": "Applications close on 15 October 2026 at 13:00 Europe/Helsinki.",
+            "quote": "Applications close on 15 October 2026 at 13:00 Europe/Helsinki.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": [],
+            "reason": "The quoted clause states the application deadline."
+          }
+        ],
+        "application_sections": [],
+        "mission_fit": "high",
+        "fit_reasons": [
+          "The grant supports community cardiovascular-health workshops, which matches the association's mission and project activity."
+        ],
+        "missing_information": [],
+        "coverage_incomplete": false
+      },
+      "authored_reviews": {
+        "items": [
+          {
+            "requirement_id": "R001",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["ORG_ENTITY"],
+            "reason": "The organization is a registered association, as the quoted clause requires."
+          },
+          {
+            "requirement_id": "R002",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["ORG_GEOGRAPHY"],
+            "reason": "The organization operates in Pirkanmaa, as the quoted clause requires."
+          },
+          {
+            "requirement_id": "R003",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["ORG_MISSION", "PROJECT_ACTIVITY"],
+            "reason": "The project delivers community cardiovascular-health workshops, matching the quoted clause."
+          },
+          {
+            "requirement_id": "R004",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["PROJECT_BUDGET"],
+            "reason": "The requested EUR 4,000.00 is in EUR and within the quoted EUR 5,000.00 maximum."
+          },
+          {
+            "requirement_id": "R005",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["PROJECT_BUDGET"],
+            "reason": "All budget lines are venue, materials, travel, insurance, or evaluation costs."
+          },
+          {
+            "requirement_id": "R006",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": [],
+            "reason": "The quoted deadline is after the evaluation clock, so the call is open."
+          }
+        ],
+        "source_complete": true,
+        "coverage_reviewed": true,
+        "deadline_reviewed": true,
+        "profile_reviewed": true,
+        "application_instructions_reviewed": true,
+        "mission_fit": "high",
+        "fit_reviewed": true
+      },
+      "authored_draft_result": {
+        "sections": [
+          {
+            "id": "executive_summary",
+            "title": "Executive Summary",
+            "text": "Pirkanmaa Community Heart Association proposes Heart Health Saturdays, a series of community cardiovascular-health workshops for residents of the Pirkanmaa region. The association is a registered association whose mission is community cardiovascular-health education and peer support. The project continues a demonstrated workshop activity: in 2025 the association delivered four community cardiovascular-health workshops with a total of 80 workshop attendances. Heart Health Saturdays builds directly on that experience while remaining a planned activity rather than a completed result. The requested budget is EUR 4,000.00, covering venue, materials, travel, insurance, and evaluation costs, all within the call's EUR 5,000.00 maximum. With this support the association can offer peer-led health education close to participants' everyday lives and strengthen local capacity for cardiovascular-health promotion in community settings across the region. Every factual statement in this proposal is grounded in the association's reviewed organization profile and the quoted funding-call text.",
+            "fact_ids": ["ORG_ENTITY", "ORG_MISSION", "PROJECT_ACTIVITY", "PROJECT_BUDGET", "HIST_WORKSHOPS", "HIST_ATTENDANCE"],
+            "placeholders": []
+          },
+          {
+            "id": "project_goals",
+            "title": "Project Goals",
+            "text": "The project has three grounded goals. First, deliver community cardiovascular-health education through a workshop series during the 2026 grant period, continuing the workshop activity the association delivered in 2025. Second, offer peer-support opportunities for participants, in line with the association's mission of community cardiovascular-health education and peer support. Third, keep the activity accessible and low-threshold for residents of the Pirkanmaa region by holding sessions in community venues. Each goal follows directly from the association's reviewed profile: the entity is a registered association operating in Pirkanmaa, the mission is cardiovascular-health education and peer support, and the proposed project Heart Health Saturdays delivers community workshops. The goals are planned commitments for the grant period; this proposal asserts no outcomes beyond what the reviewed organization facts support.",
+            "fact_ids": ["ORG_ENTITY", "ORG_GEOGRAPHY", "ORG_MISSION", "PROJECT_ACTIVITY"],
+            "placeholders": []
+          },
+          {
+            "id": "target_group",
+            "title": "Target Group",
+            "text": "The target group is adult residents of the Pirkanmaa region who are interested in cardiovascular-health education and peer support, including people who already live with cardiovascular-health concerns and people who want to reduce their risk. The association operates in the Pirkanmaa region of Finland, so the project reaches the population named in the funding call. In 2025 the association's workshops recorded 80 attendances; that figure counts total attendances, not unique people, and the project does not claim a specific number of unique beneficiaries for the planned 2026 activity. Participation is voluntary and open, and the workshops are organized as community events rather than clinical services. Residents of neighbouring areas are welcome when capacity allows, but the primary focus remains the Pirkanmaa region named in the call. The project does not collect patient data, and no health-care outcome claims are made for the target group beyond attendance records.",
+            "fact_ids": ["ORG_GEOGRAPHY", "HIST_ATTENDANCE"],
+            "placeholders": []
+          },
+          {
+            "id": "activities_timeline",
+            "title": "Activities and Timeline",
+            "text": "Heart Health Saturdays delivers community workshops as its core activity. The planned 2026 series follows the association's 2025 experience of delivering four community cardiovascular-health workshops. Each workshop session combines a cardiovascular-health education segment with structured peer-support discussion, consistent with the association's mission. Preparatory work includes booking community venues, preparing printed and digital education materials, and arranging facilitator travel across the Pirkanmaa region. The timeline begins after the funding decision: an initial planning phase covers venue reservations, material preparation, and insurance arrangements; the following months deliver the workshop series; and the final phase completes evaluation and reporting. All of these activities are proposed plans for the grant period. The association distinguishes them clearly from its demonstrated 2025 history of four delivered workshops and 80 recorded workshop attendances, which are the only completed results referenced in this proposal.",
+            "fact_ids": ["PROJECT_ACTIVITY", "HIST_WORKSHOPS", "HIST_ATTENDANCE"],
+            "placeholders": []
+          },
+          {
+            "id": "expected_impact",
+            "title": "Expected Impact",
+            "text": "The expected impact of Heart Health Saturdays is increased access to community-based cardiovascular-health education and peer support in the Pirkanmaa region. As a planned activity, the project aims to continue the workshop cadence the association delivered in 2025 and to give participants practical, everyday knowledge about cardiovascular health together with peer encouragement. Impact is followed through the evaluation budget line: the association will track workshop delivery and attendances using the same attendance-based approach used in 2025, when four workshops recorded 80 attendances. Attendance figures count visits, not unique individuals, and the project makes no claim of measured health outcomes, behaviour-change rates, or unique beneficiary counts beyond attendance records. The distinction between demonstrated 2025 history and planned 2026 impact is preserved in all reporting, so the funder can see exactly what was achieved previously and what is proposed now.",
+            "fact_ids": ["PROJECT_ACTIVITY", "HIST_WORKSHOPS", "HIST_ATTENDANCE", "PROJECT_BUDGET"],
+            "placeholders": []
+          },
+          {
+            "id": "budget_justification",
+            "title": "Budget Justification",
+            "text": "The requested amount is EUR 4,000.00, within the call's maximum of EUR 5,000.00, and the budget lines sum exactly to the requested amount. Venue costs of EUR 1,200.00 cover community premises for the workshop series in the Pirkanmaa region. Materials costs of EUR 800.00 cover printed and digital education material for participants. Travel costs of EUR 600.00 cover facilitator travel to workshop venues. Insurance costs of EUR 400.00 cover participant and volunteer insurance for the events. Evaluation costs of EUR 1,000.00 cover the tracking of delivery and attendances described in the expected-impact section. Every line is a proposed cost for the grant period, not historical expenditure, and every line falls within the eligible cost categories named in the call: venue, materials, travel, insurance, and evaluation. The association's 2025 workshop history informs these estimates, but no past expenditure is claimed as part of this budget.",
+            "fact_ids": ["PROJECT_BUDGET", "HIST_WORKSHOPS"],
+            "placeholders": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "excluded",
+      "source_file": "excluded.txt",
+      "expected_decision": "skip",
+      "authored_extraction": {
+        "foundation": {
+          "value": "Pirkanmaa Community Wellness Foundation",
+          "quote": "Pirkanmaa Community Wellness Foundation"
+        },
+        "title": {
+          "value": "Community Cardiovascular-Health Grant 2026",
+          "quote": "Community Cardiovascular-Health Grant 2026"
+        },
+        "amount": {
+          "value": "EUR 5,000",
+          "quote": "must not exceed EUR 5,000"
+        },
+        "amount_min_minor": null,
+        "amount_max_minor": 500000,
+        "currency": "EUR",
+        "focus_areas": ["cardiovascular health", "community workshops"],
+        "deadline": {
+          "kind": "datetime",
+          "raw_text": "15 October 2026 at 13:00 Europe/Helsinki",
+          "quote": "Applications close on 15 October 2026 at 13:00 Europe/Helsinki.",
+          "at": "2026-10-15T10:00:00Z",
+          "on": null,
+          "timezone": "Europe/Helsinki"
+        },
+        "requirements": [
+          {
+            "dimension": "applicant_type",
+            "description": "Only accredited universities may apply; registered associations are not eligible.",
+            "quote": "Only accredited universities may apply. Registered associations are not eligible.",
+            "suggested_status": "fails",
+            "suggested_fact_ids": ["ORG_ENTITY"],
+            "reason": "The quoted clause limits applications to accredited universities and excludes registered associations."
+          },
+          {
+            "dimension": "activity",
+            "description": "The funded activity must be community cardiovascular-health workshops.",
+            "quote": "The grant supports community cardiovascular-health workshops.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["ORG_MISSION", "PROJECT_ACTIVITY"],
+            "reason": "The quoted clause funds community cardiovascular-health workshops."
+          },
+          {
+            "dimension": "funding",
+            "description": "Requests must be in EUR and must not exceed EUR 5,000.",
+            "quote": "Requests must be in EUR and must not exceed EUR 5,000.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["PROJECT_BUDGET"],
+            "reason": "The quoted clause caps requests at EUR 5,000 and requires EUR."
+          },
+          {
+            "dimension": "funding",
+            "description": "Only venue, materials, travel, insurance, and evaluation costs are eligible.",
+            "quote": "Venue, materials, travel, insurance, and evaluation costs are eligible.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["PROJECT_BUDGET"],
+            "reason": "The quoted clause lists the eligible cost categories."
+          },
+          {
+            "dimension": "deadline",
+            "description": "Applications close on 15 October 2026 at 13:00 Europe/Helsinki.",
+            "quote": "Applications close on 15 October 2026 at 13:00 Europe/Helsinki.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": [],
+            "reason": "The quoted clause states the application deadline."
+          }
+        ],
+        "application_sections": [],
+        "mission_fit": "high",
+        "fit_reasons": [
+          "The grant supports community cardiovascular-health workshops, which matches the association's mission and project activity."
+        ],
+        "missing_information": [],
+        "coverage_incomplete": false
+      },
+      "authored_reviews": {
+        "items": [
+          {
+            "requirement_id": "R001",
+            "status": "fails",
+            "reviewed": true,
+            "fact_ids": ["ORG_ENTITY"],
+            "reason": "The quoted clause excludes registered associations; the organization is a registered association, so this is a confirmed failure."
+          },
+          {
+            "requirement_id": "R002",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["ORG_MISSION", "PROJECT_ACTIVITY"],
+            "reason": "The project delivers community cardiovascular-health workshops, matching the quoted clause."
+          },
+          {
+            "requirement_id": "R003",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["PROJECT_BUDGET"],
+            "reason": "The requested EUR 4,000.00 is in EUR and within the quoted EUR 5,000.00 maximum."
+          },
+          {
+            "requirement_id": "R004",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["PROJECT_BUDGET"],
+            "reason": "All budget lines are venue, materials, travel, insurance, or evaluation costs."
+          },
+          {
+            "requirement_id": "R005",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": [],
+            "reason": "The quoted deadline is after the evaluation clock, so the call is open."
+          }
+        ],
+        "source_complete": true,
+        "coverage_reviewed": true,
+        "deadline_reviewed": true,
+        "profile_reviewed": true,
+        "application_instructions_reviewed": true,
+        "mission_fit": "high",
+        "fit_reviewed": true
+      },
+      "authored_draft_result": null
+    },
+    {
+      "case_id": "unclear",
+      "source_file": "unclear.txt",
+      "expected_decision": "clarify",
+      "authored_extraction": {
+        "foundation": {
+          "value": "Pirkanmaa Community Wellness Foundation",
+          "quote": "Pirkanmaa Community Wellness Foundation"
+        },
+        "title": {
+          "value": "Community Cardiovascular-Health Grant 2026",
+          "quote": "Community Cardiovascular-Health Grant 2026"
+        },
+        "amount": {
+          "value": "EUR 5,000",
+          "quote": "must not exceed EUR 5,000"
+        },
+        "amount_min_minor": null,
+        "amount_max_minor": 500000,
+        "currency": "EUR",
+        "focus_areas": ["cardiovascular health", "community workshops"],
+        "deadline": {
+          "kind": "datetime",
+          "raw_text": "15 October 2026 at 13:00 Europe/Helsinki",
+          "quote": "Applications close on 15 October 2026 at 13:00 Europe/Helsinki.",
+          "at": "2026-10-15T10:00:00Z",
+          "on": null,
+          "timezone": "Europe/Helsinki"
+        },
+        "requirements": [
+          {
+            "dimension": "applicant_type",
+            "description": "Applicant must be a registered association.",
+            "quote": "Registered associations operating in Pirkanmaa, Finland may apply.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["ORG_ENTITY"],
+            "reason": "The quoted clause names registered associations as eligible applicants."
+          },
+          {
+            "dimension": "geography",
+            "description": "The organization must operate in Pirkanmaa, Finland.",
+            "quote": "Registered associations operating in Pirkanmaa, Finland may apply.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["ORG_GEOGRAPHY"],
+            "reason": "The quoted clause requires operations in Pirkanmaa, Finland."
+          },
+          {
+            "dimension": "activity",
+            "description": "The funded activity must be community cardiovascular-health workshops.",
+            "quote": "The grant supports community cardiovascular-health workshops.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["ORG_MISSION", "PROJECT_ACTIVITY"],
+            "reason": "The quoted clause funds community cardiovascular-health workshops."
+          },
+          {
+            "dimension": "funding",
+            "description": "Requests must be in EUR and must not exceed EUR 5,000.",
+            "quote": "Requests must be in EUR and must not exceed EUR 5,000.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["PROJECT_BUDGET"],
+            "reason": "The quoted clause caps requests at EUR 5,000 and requires EUR."
+          },
+          {
+            "dimension": "funding",
+            "description": "Eligible costs and mandatory co-funding are defined in Annex A.",
+            "quote": "Eligible costs and mandatory co-funding are defined in Annex A. Annex A is not included in this text.",
+            "suggested_status": "unknown",
+            "suggested_fact_ids": [],
+            "reason": "The quoted clause defers eligible costs and mandatory co-funding to Annex A, which is not included in the source text."
+          },
+          {
+            "dimension": "deadline",
+            "description": "Applications close on 15 October 2026 at 13:00 Europe/Helsinki.",
+            "quote": "Applications close on 15 October 2026 at 13:00 Europe/Helsinki.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": [],
+            "reason": "The quoted clause states the application deadline."
+          }
+        ],
+        "application_sections": [],
+        "mission_fit": "high",
+        "fit_reasons": [
+          "The grant supports community cardiovascular-health workshops, which matches the association's mission and project activity."
+        ],
+        "missing_information": [
+          "Eligible costs and mandatory co-funding are defined in Annex A, which is not included in the source text."
+        ],
+        "coverage_incomplete": false
+      },
+      "authored_reviews": {
+        "items": [
+          {
+            "requirement_id": "R001",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["ORG_ENTITY"],
+            "reason": "The organization is a registered association, as the quoted clause requires."
+          },
+          {
+            "requirement_id": "R002",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["ORG_GEOGRAPHY"],
+            "reason": "The organization operates in Pirkanmaa, as the quoted clause requires."
+          },
+          {
+            "requirement_id": "R003",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["ORG_MISSION", "PROJECT_ACTIVITY"],
+            "reason": "The project delivers community cardiovascular-health workshops, matching the quoted clause."
+          },
+          {
+            "requirement_id": "R004",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["PROJECT_BUDGET"],
+            "reason": "The requested EUR 4,000.00 is in EUR and within the quoted EUR 5,000.00 maximum."
+          },
+          {
+            "requirement_id": "R005",
+            "status": "unknown",
+            "reviewed": true,
+            "fact_ids": [],
+            "reason": "Eligible costs and mandatory co-funding depend on Annex A, which is not included in the source text; this row cannot be judged without it."
+          },
+          {
+            "requirement_id": "R006",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": [],
+            "reason": "The quoted deadline is after the evaluation clock, so the call is open."
+          }
+        ],
+        "source_complete": false,
+        "coverage_reviewed": true,
+        "deadline_reviewed": true,
+        "profile_reviewed": true,
+        "application_instructions_reviewed": true,
+        "mission_fit": "high",
+        "fit_reviewed": true
+      },
+      "authored_draft_result": {
+        "sections": [
+          {
+            "id": "clarification",
+            "title": "Clarification Request",
+            "text": "Dear Pirkanmaa Community Wellness Foundation, We are preparing an application for the Community Cardiovascular-Health Grant 2026 for our project Heart Health Saturdays. The call text states: 'Eligible costs and mandatory co-funding are defined in Annex A. Annex A is not included in this text.' Could you please share Annex A, or confirm which cost categories are eligible and whether mandatory co-funding is required? Our proposed budget is EUR 4,000.00, covering venue, materials, travel, insurance, and evaluation costs. We would also appreciate confirmation that applications close on 15 October 2026 at 13:00 Europe/Helsinki. Thank you for your guidance. Kind regards, Pirkanmaa Community Heart Association",
+            "fact_ids": ["PROJECT_BUDGET"],
+            "placeholders": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "expired",
+      "source_file": "expired.txt",
+      "expected_decision": "skip",
+      "authored_extraction": {
+        "foundation": {
+          "value": "Pirkanmaa Community Wellness Foundation",
+          "quote": "Pirkanmaa Community Wellness Foundation"
+        },
+        "title": {
+          "value": "Community Cardiovascular-Health Grant 2026",
+          "quote": "Community Cardiovascular-Health Grant 2026"
+        },
+        "amount": {
+          "value": "EUR 5,000",
+          "quote": "must not exceed EUR 5,000"
+        },
+        "amount_min_minor": null,
+        "amount_max_minor": 500000,
+        "currency": "EUR",
+        "focus_areas": ["cardiovascular health", "community workshops"],
+        "deadline": {
+          "kind": "datetime",
+          "raw_text": "31 August 2026 at 13:00 Europe/Helsinki",
+          "quote": "Applications close on 31 August 2026 at 13:00 Europe/Helsinki.",
+          "at": "2026-08-31T10:00:00Z",
+          "on": null,
+          "timezone": "Europe/Helsinki"
+        },
+        "requirements": [
+          {
+            "dimension": "applicant_type",
+            "description": "Applicant must be a registered association.",
+            "quote": "Registered associations operating in Pirkanmaa, Finland may apply.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["ORG_ENTITY"],
+            "reason": "The quoted clause names registered associations as eligible applicants."
+          },
+          {
+            "dimension": "geography",
+            "description": "The organization must operate in Pirkanmaa, Finland.",
+            "quote": "Registered associations operating in Pirkanmaa, Finland may apply.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["ORG_GEOGRAPHY"],
+            "reason": "The quoted clause requires operations in Pirkanmaa, Finland."
+          },
+          {
+            "dimension": "activity",
+            "description": "The funded activity must be community cardiovascular-health workshops.",
+            "quote": "The grant supports community cardiovascular-health workshops.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["ORG_MISSION", "PROJECT_ACTIVITY"],
+            "reason": "The quoted clause funds community cardiovascular-health workshops."
+          },
+          {
+            "dimension": "funding",
+            "description": "Requests must be in EUR and must not exceed EUR 5,000.",
+            "quote": "Requests must be in EUR and must not exceed EUR 5,000.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["PROJECT_BUDGET"],
+            "reason": "The quoted clause caps requests at EUR 5,000 and requires EUR."
+          },
+          {
+            "dimension": "funding",
+            "description": "Only venue, materials, travel, insurance, and evaluation costs are eligible.",
+            "quote": "Venue, materials, travel, insurance, and evaluation costs are eligible.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["PROJECT_BUDGET"],
+            "reason": "The quoted clause lists the eligible cost categories."
+          },
+          {
+            "dimension": "deadline",
+            "description": "Applications closed on 31 August 2026 at 13:00 Europe/Helsinki.",
+            "quote": "Applications close on 31 August 2026 at 13:00 Europe/Helsinki.",
+            "suggested_status": "fails",
+            "suggested_fact_ids": [],
+            "reason": "The quoted deadline of 31 August 2026 is before the current evaluation clock."
+          }
+        ],
+        "application_sections": [],
+        "mission_fit": "high",
+        "fit_reasons": [
+          "The grant supports community cardiovascular-health workshops, which matches the association's mission and project activity."
+        ],
+        "missing_information": [],
+        "coverage_incomplete": false
+      },
+      "authored_reviews": {
+        "items": [
+          {
+            "requirement_id": "R001",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["ORG_ENTITY"],
+            "reason": "The organization is a registered association, as the quoted clause requires."
+          },
+          {
+            "requirement_id": "R002",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["ORG_GEOGRAPHY"],
+            "reason": "The organization operates in Pirkanmaa, as the quoted clause requires."
+          },
+          {
+            "requirement_id": "R003",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["ORG_MISSION", "PROJECT_ACTIVITY"],
+            "reason": "The project delivers community cardiovascular-health workshops, matching the quoted clause."
+          },
+          {
+            "requirement_id": "R004",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["PROJECT_BUDGET"],
+            "reason": "The requested EUR 4,000.00 is in EUR and within the quoted EUR 5,000.00 maximum."
+          },
+          {
+            "requirement_id": "R005",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["PROJECT_BUDGET"],
+            "reason": "All budget lines are venue, materials, travel, insurance, or evaluation costs."
+          },
+          {
+            "requirement_id": "R006",
+            "status": "fails",
+            "reviewed": true,
+            "fact_ids": [],
+            "reason": "The dated source and the evaluation clock show the application period closed on 31 August 2026 at 13:00 Europe/Helsinki, which has definitely passed."
+          }
+        ],
+        "source_complete": true,
+        "coverage_reviewed": true,
+        "deadline_reviewed": true,
+        "profile_reviewed": true,
+        "application_instructions_reviewed": true,
+        "mission_fit": "high",
+        "fit_reviewed": true
+      },
+      "authored_draft_result": null
+    },
+    {
+      "case_id": "wrong_region",
+      "source_file": "wrong_region.txt",
+      "expected_decision": "skip",
+      "authored_extraction": {
+        "foundation": {
+          "value": "Pirkanmaa Community Wellness Foundation",
+          "quote": "Pirkanmaa Community Wellness Foundation"
+        },
+        "title": {
+          "value": "Community Cardiovascular-Health Grant 2026",
+          "quote": "Community Cardiovascular-Health Grant 2026"
+        },
+        "amount": {
+          "value": "EUR 5,000",
+          "quote": "must not exceed EUR 5,000"
+        },
+        "amount_min_minor": null,
+        "amount_max_minor": 500000,
+        "currency": "EUR",
+        "focus_areas": ["cardiovascular health", "community workshops"],
+        "deadline": {
+          "kind": "datetime",
+          "raw_text": "15 October 2026 at 13:00 Europe/Helsinki",
+          "quote": "Applications close on 15 October 2026 at 13:00 Europe/Helsinki.",
+          "at": "2026-10-15T10:00:00Z",
+          "on": null,
+          "timezone": "Europe/Helsinki"
+        },
+        "requirements": [
+          {
+            "dimension": "applicant_type",
+            "description": "Applicant must be a registered association.",
+            "quote": "Only registered associations operating in Uusimaa, Finland may apply.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["ORG_ENTITY"],
+            "reason": "The quoted clause accepts registered associations as applicants."
+          },
+          {
+            "dimension": "geography",
+            "description": "The organization must operate in Uusimaa, Finland.",
+            "quote": "Only registered associations operating in Uusimaa, Finland may apply.",
+            "suggested_status": "fails",
+            "suggested_fact_ids": ["ORG_GEOGRAPHY"],
+            "reason": "The quoted clause requires operations in Uusimaa, Finland."
+          },
+          {
+            "dimension": "activity",
+            "description": "The funded activity must be community cardiovascular-health workshops.",
+            "quote": "The grant supports community cardiovascular-health workshops.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["ORG_MISSION", "PROJECT_ACTIVITY"],
+            "reason": "The quoted clause funds community cardiovascular-health workshops."
+          },
+          {
+            "dimension": "funding",
+            "description": "Requests must be in EUR and must not exceed EUR 5,000.",
+            "quote": "Requests must be in EUR and must not exceed EUR 5,000.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["PROJECT_BUDGET"],
+            "reason": "The quoted clause caps requests at EUR 5,000 and requires EUR."
+          },
+          {
+            "dimension": "funding",
+            "description": "Only venue, materials, travel, insurance, and evaluation costs are eligible.",
+            "quote": "Venue, materials, travel, insurance, and evaluation costs are eligible.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": ["PROJECT_BUDGET"],
+            "reason": "The quoted clause lists the eligible cost categories."
+          },
+          {
+            "dimension": "deadline",
+            "description": "Applications close on 15 October 2026 at 13:00 Europe/Helsinki.",
+            "quote": "Applications close on 15 October 2026 at 13:00 Europe/Helsinki.",
+            "suggested_status": "meets",
+            "suggested_fact_ids": [],
+            "reason": "The quoted clause states the application deadline."
+          }
+        ],
+        "application_sections": [],
+        "mission_fit": "high",
+        "fit_reasons": [
+          "The grant supports community cardiovascular-health workshops, which matches the association's mission and project activity."
+        ],
+        "missing_information": [],
+        "coverage_incomplete": false
+      },
+      "authored_reviews": {
+        "items": [
+          {
+            "requirement_id": "R001",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["ORG_ENTITY"],
+            "reason": "The organization is a registered association, which the quoted clause accepts."
+          },
+          {
+            "requirement_id": "R002",
+            "status": "fails",
+            "reviewed": true,
+            "fact_ids": ["ORG_GEOGRAPHY"],
+            "reason": "The quoted clause requires operations in Uusimaa; the organization operates in Pirkanmaa, so this is a confirmed failure."
+          },
+          {
+            "requirement_id": "R003",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["ORG_MISSION", "PROJECT_ACTIVITY"],
+            "reason": "The project delivers community cardiovascular-health workshops, matching the quoted clause."
+          },
+          {
+            "requirement_id": "R004",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["PROJECT_BUDGET"],
+            "reason": "The requested EUR 4,000.00 is in EUR and within the quoted EUR 5,000.00 maximum."
+          },
+          {
+            "requirement_id": "R005",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": ["PROJECT_BUDGET"],
+            "reason": "All budget lines are venue, materials, travel, insurance, or evaluation costs."
+          },
+          {
+            "requirement_id": "R006",
+            "status": "meets",
+            "reviewed": true,
+            "fact_ids": [],
+            "reason": "The quoted deadline is after the evaluation clock, so the call is open."
+          }
+        ],
+        "source_complete": true,
+        "coverage_reviewed": true,
+        "deadline_reviewed": true,
+        "profile_reviewed": true,
+        "application_instructions_reviewed": true,
+        "mission_fit": "high",
+        "fit_reviewed": true
+      },
+      "authored_draft_result": null
+    }
+  ]
 }
